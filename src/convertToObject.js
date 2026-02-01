@@ -6,18 +6,18 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  const result = {};
+  const styleObject = {};
   const rules = sourceString.split(';');
 
   rules.forEach((rule) => {
     const [property, value] = rule.split(':').map((item) => item.trim());
 
     if (property && value) {
-      result[property] = value;
+      styleObject[property] = value;
     }
   });
 
-  return result;
+  return styleObject;
 }
 
 module.exports = convertToObject;
